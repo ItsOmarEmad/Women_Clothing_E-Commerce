@@ -1,24 +1,30 @@
-// Placeholder image URLs for the e-commerce application
+// Local asset imports for the e-commerce application
+import geminiImage1 from '@/assets/Gemini_Generated_Image_d4v3k3d4v3k3d4v3.png';
+import geminiImage2 from '@/assets/Gemini_Generated_Image_9y49mw9y49mw9y49.png';
+import geminiImage3 from '@/assets/Gemini_Generated_Image_3d3f5f3d3f5f3d3f.png';
+import edsagaImage from '@/assets/edsaga.png';
+import downloadImage from '@/assets/download.jpeg';
+
 export const placeholderImages = {
     // Hero and banner images
-    hero: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=800&fit=crop&crop=center",
+    hero: geminiImage1,
 
     // Product category images
-    hijabs: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=500&fit=crop&crop=center",
-    tops: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=500&fit=crop&crop=center",
-    dresses: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop&crop=center",
+    hijabs: geminiImage2,
+    tops: geminiImage3,
+    dresses: edsagaImage,
 
     // Specific product images
-    hijabBeige: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=500&fit=crop&crop=center",
-    hijabBlack: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=500&fit=crop&crop=center",
-    shirtDustyRose: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=500&fit=crop&crop=center",
-    dressNavy: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop&crop=center",
-    tunicWhite: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=500&fit=crop&crop=center",
+    hijabBeige: geminiImage2,
+    hijabBlack: geminiImage2,
+    shirtDustyRose: geminiImage3,
+    dressNavy: edsagaImage,
+    tunicWhite: downloadImage,
 
     // Generic placeholders
-    product: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=500&fit=crop&crop=center",
-    category: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&crop=center",
-    banner: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=400&fit=crop&crop=center",
+    product: geminiImage1,
+    category: geminiImage1,
+    banner: geminiImage1,
 } as const;
 
 // Function to get a placeholder image by category

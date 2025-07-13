@@ -105,7 +105,7 @@ export function ProductCard({ product, onAddToCart, onToggleWishlist, isInWishli
                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=500&fit=crop&crop=center";
+                        target.src = "/src/assets/Gemini_Generated_Image_d4v3k3d4v3k3d4v3.png";
                     }}
                 />
 

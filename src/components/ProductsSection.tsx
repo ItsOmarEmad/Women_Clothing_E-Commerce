@@ -270,6 +270,10 @@ export function ProductsSection({ searchQuery, wishlist, onAddToCart, onToggleWi
                 src={hijabBlack}
                 alt="Hijab Collection"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/src/assets/Gemini_Generated_Image_9y49mw9y49mw9y49.png";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
@@ -285,6 +289,10 @@ export function ProductsSection({ searchQuery, wishlist, onAddToCart, onToggleWi
                 src={dressNavy}
                 alt="Dress Collection"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/src/assets/edsaga.png";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
@@ -300,6 +308,10 @@ export function ProductsSection({ searchQuery, wishlist, onAddToCart, onToggleWi
                 src={tunicWhite}
                 alt="Modest Wear"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/src/assets/download.jpeg";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">

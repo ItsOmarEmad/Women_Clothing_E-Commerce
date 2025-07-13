@@ -1,21 +1,48 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { placeholderImages } from "@/lib/placeholders";
-
-// Placeholder hero image
-const heroImage = placeholderImages.hero;
+import downloadImage from '@/assets/download.jpeg';
 
 export function Hero() {
+    const [scrollY, setScrollY] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setScrollY(currentScrollY);
+
+            // Parallax effect for background
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            parallaxElements.forEach((element) => {
+                const speed = 0.5;
+                const yPos = -(currentScrollY * speed);
+                (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+            });
+
+            // Fade out effect when scrolling down
+            if (currentScrollY > 100) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blush via-peach/40 to-mint/30">
+        <section className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blush via-peach/40 to-mint/30 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-50'
+            }`}>
             {/* Background Image */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 parallax-bg">
                 <img
-                    src={heroImage}
+                    src={downloadImage}
                     alt="Elegant modest fashion"
                     className="w-full h-full object-cover opacity-20"
                     onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=800&fit=crop&crop=center";
+                        target.src = "/src/assets/download.jpeg";
                     }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-blush/80 via-peach/60 to-transparent"></div>
@@ -23,16 +50,20 @@ export function Hero() {
 
             {/* Content */}
             <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-4xl mx-auto text-center animate-fade-in">
+                <div className={`max-w-4xl mx-auto text-center animate-fade-in transition-all duration-700 ${scrollY > 50 ? 'transform translate-y-[-20px] scale-95' : 'transform translate-y-0 scale-100'
+                    }`}>
                     {/* Badge */}
                     <div className="inline-flex items-center px-4 py-2 bg-gradient-peach border border-coral/30 rounded-full text-sm font-medium text-coral mb-6 animate-bounce-in shadow-peach">
                         ✨ New Collection Available
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                        <span className="block text-foreground animate-slide-down" style={{ animationDelay: '0.2s' }}>Elegant</span>
-                        <span className="block bg-gradient-sunset bg-clip-text text-transparent animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                    <h1 className={`font-bold mb-6 leading-tight transition-all duration-500 ${scrollY > 30 ? 'text-4xl md:text-6xl' : 'text-5xl md:text-7xl'
+                        }`}>
+                        <span className={`block text-foreground animate-slide-down transition-all duration-500 ${scrollY > 30 ? 'transform translate-x-[-10px]' : 'transform translate-x-0'
+                            }`} style={{ animationDelay: '0.2s' }}>Elegant</span>
+                        <span className={`block bg-gradient-sunset bg-clip-text text-transparent animate-slide-up transition-all duration-500 ${scrollY > 30 ? 'transform translate-x-[10px]' : 'transform translate-x-0'
+                            }`} style={{ animationDelay: '0.4s' }}>
                             Modest Fashion
                         </span>
                     </h1>
@@ -92,11 +123,16 @@ export function Hero() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-peach rounded-full opacity-30 animate-float"></div>
-            <div className="absolute bottom-20 right-10 w-16 h-16 bg-gradient-mint rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 right-20 w-12 h-12 bg-gradient-blush rounded-full opacity-40 animate-float" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute top-1/3 left-20 w-8 h-8 bg-gradient-sunset rounded-full opacity-25 animate-float" style={{ animationDelay: '1.5s' }}></div>
-            <div className="absolute bottom-1/3 left-1/4 w-10 h-10 bg-gradient-feminine rounded-full opacity-20 animate-float" style={{ animationDelay: '2.5s' }}></div>
+            <div className={`absolute top-20 left-10 w-20 h-20 bg-gradient-peach rounded-full opacity-30 animate-float parallax-bg transition-all duration-700 ${scrollY > 50 ? 'transform translate-y-[-30px] scale-75' : 'transform translate-y-0 scale-100'
+                }`}></div>
+            <div className={`absolute bottom-20 right-10 w-16 h-16 bg-gradient-mint rounded-full opacity-30 animate-float parallax-bg transition-all duration-700 ${scrollY > 50 ? 'transform translate-y-[30px] scale-75' : 'transform translate-y-0 scale-100'
+                }`} style={{ animationDelay: '1s' }}></div>
+            <div className={`absolute top-1/2 right-20 w-12 h-12 bg-gradient-blush rounded-full opacity-40 animate-float parallax-bg transition-all duration-700 ${scrollY > 50 ? 'transform translate-x-[20px] scale-75' : 'transform translate-x-0 scale-100'
+                }`} style={{ animationDelay: '2s' }}></div>
+            <div className={`absolute top-1/3 left-20 w-8 h-8 bg-gradient-sunset rounded-full opacity-25 animate-float parallax-bg transition-all duration-700 ${scrollY > 50 ? 'transform translate-x-[-20px] scale-75' : 'transform translate-x-0 scale-100'
+                }`} style={{ animationDelay: '1.5s' }}></div>
+            <div className={`absolute bottom-1/3 left-1/4 w-10 h-10 bg-gradient-feminine rounded-full opacity-20 animate-float parallax-bg transition-all duration-700 ${scrollY > 50 ? 'transform translate-y-[20px] scale-75' : 'transform translate-y-0 scale-100'
+                }`} style={{ animationDelay: '2.5s' }}></div>
         </section>
     );
 }
