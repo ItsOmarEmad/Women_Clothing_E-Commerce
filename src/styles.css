@@ -1,0 +1,75 @@
+:root {
+    --golden: #d4af37;
+}
+
+.golden-hover:hover {
+    color: var(--golden);
+}
+
+.text-gold {
+    color: var(--golden);
+}
+
+.bg-gold {
+    background-color: var(--golden);
+    color: #fff;
+}
+
+.hero-bg-shape {
+    background: radial-gradient(circle at 60% 40%, #ffe9a7 60%, #fff0 100%);
+    filter: blur(8px);
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+}
+
+.golden-bg-hover {
+    background-color: #000;
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.golden-bg-hover:hover {
+    background-color: var(--golden);
+    color: #fff;
+    box-shadow: 0 4px 24px 0 rgba(212, 175, 55, 0.15);
+}
+
+.secondary-button {
+    background-color: transparent;
+    border: 2px solid var(--golden);
+    color: var(--golden);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.secondary-button:hover {
+    background-color: var(--golden);
+    color: #fff;
+    box-shadow: 0 4px 24px 0 rgba(212, 175, 55, 0.10);
+}
+
+.filter-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.range-slider {
+    width: 100%;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+}

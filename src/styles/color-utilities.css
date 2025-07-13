@@ -1,0 +1,348 @@
+/* Modest Fashion Color Palette Utilities */
+
+/* Background Colors */
+.bg-modest-primary {
+    background-color: hsl(var(--gold));
+}
+
+.bg-modest-secondary {
+    background-color: hsl(var(--blush));
+}
+
+.bg-modest-accent {
+    background-color: hsl(var(--mauve));
+}
+
+.bg-modest-neutral {
+    background-color: hsl(var(--beige));
+}
+
+.bg-modest-warm {
+    background-color: hsl(var(--cream));
+}
+
+/* Text Colors */
+.text-modest-primary {
+    color: hsl(var(--gold));
+}
+
+.text-modest-secondary {
+    color: hsl(var(--blush));
+}
+
+.text-modest-accent {
+    color: hsl(var(--mauve));
+}
+
+.text-modest-neutral {
+    color: hsl(var(--taupe));
+}
+
+.text-modest-muted {
+    color: hsl(var(--taupe-light));
+}
+
+/* Border Colors */
+.border-modest-primary {
+    border-color: hsl(var(--gold));
+}
+
+.border-modest-secondary {
+    border-color: hsl(var(--blush));
+}
+
+.border-modest-accent {
+    border-color: hsl(var(--mauve));
+}
+
+.border-modest-neutral {
+    border-color: hsl(var(--border));
+}
+
+/* Hover States */
+.hover\:bg-modest-primary:hover {
+    background-color: hsl(var(--gold-dark));
+}
+
+.hover\:bg-modest-secondary:hover {
+    background-color: hsl(var(--pink));
+}
+
+.hover\:bg-modest-accent:hover {
+    background-color: hsl(var(--pink-dark));
+}
+
+/* Focus States */
+.focus\:ring-modest-primary:focus {
+    --tw-ring-color: hsl(var(--gold));
+}
+
+.focus\:ring-modest-secondary:focus {
+    --tw-ring-color: hsl(var(--blush));
+}
+
+.focus\:ring-modest-accent:focus {
+    --tw-ring-color: hsl(var(--mauve));
+}
+
+/* Shadow Utilities */
+.shadow-modest-elegant {
+    box-shadow: var(--shadow-elegant);
+}
+
+.shadow-modest-gold {
+    box-shadow: var(--shadow-gold);
+}
+
+.shadow-modest-blush {
+    box-shadow: var(--shadow-blush);
+}
+
+/* Gradient Utilities */
+.bg-gradient-modest-elegant {
+    background: var(--gradient-elegant);
+}
+
+.bg-gradient-modest-grace {
+    background: var(--gradient-grace);
+}
+
+.bg-gradient-modest-feminine {
+    background: var(--gradient-feminine);
+}
+
+/* Component-Specific Classes */
+
+/* Premium Button */
+.btn-premium {
+    background: hsl(var(--gold));
+    color: hsl(var(--cream));
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-elegant);
+}
+
+.btn-premium:hover {
+    background: hsl(var(--gold-dark));
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px hsl(var(--taupe) / 0.2);
+}
+
+/* Soft Button */
+.btn-soft {
+    background: hsl(var(--blush));
+    color: hsl(var(--taupe));
+    border: 1px solid hsl(var(--border));
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-soft:hover {
+    background: hsl(var(--pink));
+    border-color: hsl(var(--pink));
+}
+
+/* Elegant Card */
+.card-elegant {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-elegant);
+    transition: all 0.3s ease;
+}
+
+.card-elegant:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px -12px hsl(var(--gold) / 0.25);
+}
+
+/* Soft Card */
+.card-soft {
+    background: hsl(var(--beige));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-blush);
+    transition: all 0.3s ease;
+}
+
+.card-soft:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px hsl(var(--blush) / 0.3);
+}
+
+/* Premium Section */
+.section-premium {
+    background: var(--gradient-elegant);
+    padding: 3rem 0;
+    position: relative;
+}
+
+.section-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, hsl(var(--gold) / 0.1), hsl(var(--mauve) / 0.1));
+    pointer-events: none;
+}
+
+/* Modest Section */
+.section-modest {
+    background: var(--gradient-modest);
+    padding: 3rem 0;
+}
+
+/* Grace Section */
+.section-grace {
+    background: var(--gradient-grace);
+    padding: 3rem 0;
+}
+
+/* Typography Utilities */
+.heading-premium {
+    color: hsl(var(--gold));
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.heading-elegant {
+    color: hsl(var(--taupe));
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.text-body-primary {
+    color: hsl(var(--taupe));
+    line-height: 1.6;
+}
+
+.text-body-secondary {
+    color: hsl(var(--taupe-light));
+    line-height: 1.6;
+}
+
+/* Form Elements */
+.input-modest {
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: hsl(var(--taupe));
+    transition: all 0.3s ease;
+}
+
+.input-modest:focus {
+    outline: none;
+    border-color: hsl(var(--gold));
+    box-shadow: 0 0 0 3px hsl(var(--gold) / 0.1);
+}
+
+/* Navigation */
+.nav-modest {
+    background: hsl(var(--background));
+    border-bottom: 1px solid hsl(var(--border));
+    backdrop-filter: blur(10px);
+}
+
+.nav-link-modest {
+    color: hsl(var(--taupe));
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link-modest:hover {
+    color: hsl(var(--gold));
+}
+
+.nav-link-modest.active {
+    color: hsl(var(--gold));
+    font-weight: 600;
+}
+
+/* Footer */
+.footer-modest {
+    background: hsl(var(--beige));
+    border-top: 1px solid hsl(var(--border));
+    color: hsl(var(--taupe-light));
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+
+    .btn-premium,
+    .btn-soft {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .card-elegant,
+    .card-soft {
+        padding: 1rem;
+    }
+
+    .section-premium,
+    .section-modest,
+    .section-grace {
+        padding: 2rem 0;
+    }
+}
+
+/* Animation Utilities */
+.animate-modest-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-modest-slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .btn-premium,
+    .btn-soft {
+        background: hsl(var(--taupe)) !important;
+        color: hsl(var(--cream)) !important;
+        border: 1px solid hsl(var(--taupe)) !important;
+        box-shadow: none !important;
+    }
+
+    .card-elegant,
+    .card-soft {
+        box-shadow: none !important;
+        border: 1px solid hsl(var(--border)) !important;
+    }
+}

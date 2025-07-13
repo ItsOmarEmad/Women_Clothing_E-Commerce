@@ -1,0 +1,233 @@
+/* Import color utilities */
+@import './styles/color-utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+    :root {
+        /* Primary Background & Text */
+        --background: 45 30% 98%;
+        /* Warm off-white */
+        --foreground: 25 15% 25%;
+        /* Deep warm taupe */
+
+        --card: 45 30% 98%;
+        /* Warm off-white */
+        --card-foreground: 25 15% 25%;
+        /* Deep warm taupe */
+
+        --popover: 45 30% 98%;
+        /* Warm off-white */
+        --popover-foreground: 25 15% 25%;
+        /* Deep warm taupe */
+
+        /* Primary Color - Deep Gold (Strength & Class) */
+        --primary: 35 85% 45%;
+        /* Rich deep gold */
+        --primary-foreground: 45 30% 98%;
+        /* Warm off-white */
+
+        /* Secondary Color - Soft Blush (Purity & Softness) */
+        --secondary: 350 25% 95%;
+        /* Soft blush */
+        --secondary-foreground: 25 15% 25%;
+        /* Deep warm taupe */
+
+        /* Muted Colors - Creamy Beige */
+        --muted: 40 25% 94%;
+        /* Creamy beige */
+        --muted-foreground: 25 20% 45%;
+        /* Muted warm taupe */
+
+        /* Accent Color - Deep Mauve (Grace & Sophistication) */
+        --accent: 320 25% 65%;
+        /* Deep mauve */
+        --accent-foreground: 45 30% 98%;
+        /* Warm off-white */
+
+        /* Destructive */
+        --destructive: 0 65% 55%;
+        /* Muted red */
+        --destructive-foreground: 45 30% 98%;
+        /* Warm off-white */
+
+        /* Borders & Inputs */
+        --border: 40 20% 90%;
+        /* Soft warm border */
+        --input: 40 20% 90%;
+        /* Soft warm border */
+        --ring: 35 85% 45%;
+        /* Deep gold ring */
+
+        --radius: 0.75rem;
+
+        /* Custom brand colors - Modest Fashion Palette */
+        --pink: 350 25% 75%;
+        /* Soft rose blush */
+        --pink-light: 350 30% 90%;
+        /* Light rose blush */
+        --pink-dark: 320 30% 55%;
+        /* Deep mauve */
+        --rose: 350 30% 70%;
+        /* Muted rose */
+        --rose-light: 350 35% 85%;
+        /* Light muted rose */
+        --lavender: 300 20% 75%;
+        /* Soft lavender */
+        --gold: 35 85% 45%;
+        /* Deep gold */
+        --gold-light: 35 80% 65%;
+        /* Light gold */
+        --gold-dark: 35 90% 35%;
+        /* Dark gold */
+        --peach: 25 40% 85%;
+        /* Soft peach */
+        --coral: 15 35% 70%;
+        /* Muted coral */
+        --mint: 160 25% 85%;
+        /* Soft mint */
+        --soft-blue: 210 25% 85%;
+        /* Soft blue */
+        --blush: 350 25% 95%;
+        /* Soft blush */
+        --cream: 45 30% 98%;
+        /* Warm cream */
+        --taupe: 25 15% 25%;
+        /* Deep warm taupe */
+        --taupe-light: 25 20% 45%;
+        /* Light taupe */
+        --olive: 60 15% 70%;
+        /* Soft olive */
+        --mauve: 320 25% 65%;
+        /* Deep mauve */
+        --beige: 40 25% 94%;
+        /* Creamy beige */
+
+        /* Gradients - Elegant & Sophisticated */
+        --gradient-pink: linear-gradient(135deg, hsl(var(--pink-light)), hsl(var(--pink)));
+        --gradient-rose: linear-gradient(135deg, hsl(var(--rose-light)), hsl(var(--rose)));
+        --gradient-elegant: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--mauve)));
+        --gradient-gold: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)));
+        --gradient-peach: linear-gradient(135deg, hsl(var(--peach)), hsl(var(--coral)));
+        --gradient-blush: linear-gradient(135deg, hsl(var(--blush)), hsl(var(--pink-light)));
+        --gradient-mint: linear-gradient(135deg, hsl(var(--mint)), hsl(var(--soft-blue)));
+        --gradient-sunset: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--pink)));
+        --gradient-feminine: linear-gradient(135deg, hsl(var(--blush)), hsl(var(--lavender)));
+        --gradient-modest: linear-gradient(135deg, hsl(var(--beige)), hsl(var(--cream)));
+        --gradient-grace: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--olive)));
+
+        /* Shadows - Soft & Elegant */
+        --shadow-elegant: 0 10px 40px -10px hsl(var(--taupe) / 0.1);
+        --shadow-pink: 0 8px 32px -8px hsl(var(--pink) / 0.2);
+        --shadow-peach: 0 8px 32px -8px hsl(var(--coral) / 0.2);
+        --shadow-blush: 0 6px 24px -6px hsl(var(--blush) / 0.3);
+        --shadow-mint: 0 8px 32px -8px hsl(var(--mint) / 0.2);
+        --shadow-gold: 0 8px 32px -8px hsl(var(--taupe) / 0.15);
+
+        /* Animations */
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        /* Sidebar Colors */
+        --sidebar-background: 45 25% 96%;
+        /* Slightly darker warm background */
+        --sidebar-foreground: 25 15% 25%;
+        /* Deep warm taupe */
+        --sidebar-primary: 35 85% 45%;
+        /* Deep gold */
+        --sidebar-primary-foreground: 45 30% 98%;
+        /* Warm off-white */
+        --sidebar-accent: 40 20% 92%;
+        /* Soft warm accent */
+        --sidebar-accent-foreground: 25 15% 25%;
+        /* Deep warm taupe */
+        --sidebar-border: 40 20% 90%;
+        /* Soft warm border */
+        --sidebar-ring: 35 85% 45%;
+        /* Deep gold ring */
+    }
+
+    .dark {
+        /* Dark Mode - Maintaining Elegance */
+        --background: 25 20% 12%;
+        /* Deep warm dark */
+        --foreground: 45 25% 90%;
+        /* Warm light text */
+
+        --card: 25 20% 12%;
+        /* Deep warm dark */
+        --card-foreground: 45 25% 90%;
+        /* Warm light text */
+
+        --popover: 25 20% 12%;
+        /* Deep warm dark */
+        --popover-foreground: 45 25% 90%;
+        /* Warm light text */
+
+        --primary: 35 85% 55%;
+        /* Brighter gold for dark mode */
+        --primary-foreground: 25 20% 12%;
+        /* Deep warm dark */
+
+        --secondary: 25 15% 18%;
+        /* Dark taupe */
+        --secondary-foreground: 45 25% 90%;
+        /* Warm light text */
+
+        --muted: 25 15% 18%;
+        /* Dark taupe */
+        --muted-foreground: 25 20% 65%;
+        /* Muted warm light */
+
+        --accent: 320 25% 55%;
+        /* Darker mauve */
+        --accent-foreground: 45 25% 90%;
+        /* Warm light text */
+
+        --destructive: 0 65% 45%;
+        /* Darker red */
+        --destructive-foreground: 45 25% 90%;
+        /* Warm light text */
+
+        --border: 25 15% 20%;
+        /* Dark warm border */
+        --input: 25 15% 20%;
+        /* Dark warm border */
+        --ring: 35 85% 55%;
+        /* Brighter gold ring */
+
+        /* Dark mode sidebar */
+        --sidebar-background: 25 20% 10%;
+        /* Darker warm background */
+        --sidebar-foreground: 45 25% 90%;
+        /* Warm light text */
+        --sidebar-primary: 35 85% 55%;
+        /* Brighter gold */
+        --sidebar-primary-foreground: 25 20% 12%;
+        /* Deep warm dark */
+        --sidebar-accent: 25 15% 18%;
+        /* Dark taupe */
+        --sidebar-accent-foreground: 45 25% 90%;
+        /* Warm light text */
+        --sidebar-border: 25 15% 20%;
+        /* Dark warm border */
+        --sidebar-ring: 35 85% 55%;
+        /* Brighter gold ring */
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
